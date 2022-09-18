@@ -28,7 +28,7 @@
         "my": 0.0,
         "mz": 3.1,
         "Mx": 16.0,
-        "My": 7.4,
+        "My": 8.4,
         "Mz": 16.0,
         "subtract": false
       },
@@ -134,11 +134,7 @@
     "fluidRestrictions": [],
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
-    "blocksToReplace": [
-      {
-        "value": "Blocks.STONE"
-      }
-    ],
+    "blocksToReplace": [],
     "generationShape": "UNIFORM",
     "frequencyPerChunks": 10,
     "frequencyOnChunk": 16,

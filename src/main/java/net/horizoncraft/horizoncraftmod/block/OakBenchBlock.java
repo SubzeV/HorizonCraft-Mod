@@ -64,10 +64,10 @@ public class OakBenchBlock extends Block implements SimpleWaterloggedBlock {
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		Vec3 offset = state.getOffset(world, pos);
 		return (switch (state.getValue(FACING)) {
-			default -> Shapes.or(box(0, 0, 0, 16, 7.4, 12.9), box(0, 0, 0, 16, 16, 4.25));
-			case NORTH -> Shapes.or(box(0, 0, 3.1, 16, 7.4, 16), box(0, 0, 11.75, 16, 16, 16));
-			case EAST -> Shapes.or(box(0, 0, 0, 12.9, 7.4, 16), box(0, 0, 0, 4.25, 16, 16));
-			case WEST -> Shapes.or(box(3.1, 0, 0, 16, 7.4, 16), box(11.75, 0, 0, 16, 16, 16));
+			default -> Shapes.or(box(0, 0, 0, 16, 8.4, 12.9), box(0, 0, 0, 16, 16, 4.25));
+			case NORTH -> Shapes.or(box(0, 0, 3.1, 16, 8.4, 16), box(0, 0, 11.75, 16, 16, 16));
+			case EAST -> Shapes.or(box(0, 0, 0, 12.9, 8.4, 16), box(0, 0, 0, 4.25, 16, 16));
+			case WEST -> Shapes.or(box(3.1, 0, 0, 16, 8.4, 16), box(11.75, 0, 0, 16, 16, 16));
 		}).move(offset.x, offset.y, offset.z);
 	}
 
