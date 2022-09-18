@@ -2,6 +2,7 @@
 package net.horizoncraft.horizoncraftmod.block;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.storage.loot.LootContext;
@@ -18,7 +19,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.Mirror;
-import net.minecraft.world.level.block.DirectionalBlock;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.BlockGetter;
@@ -41,7 +42,7 @@ import java.util.Collections;
 public class OakBenchBlock extends Block implements SimpleWaterloggedBlock {
 	public static BlockBehaviour.Properties PROPERTIES = FabricBlockSettings.of(Material.WOOD).sound(SoundType.WOOD).strength(1.5f, 10f).noOcclusion()
 			.isRedstoneConductor((bs, br, bp) -> false);
-	public static final DirectionProperty FACING = DirectionalBlock.FACING;
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	public OakBenchBlock() {
@@ -63,12 +64,10 @@ public class OakBenchBlock extends Block implements SimpleWaterloggedBlock {
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		Vec3 offset = state.getOffset(world, pos);
 		return (switch (state.getValue(FACING)) {
-			default -> box(0, 0, 0, 16, 10, 16);
-			case NORTH -> box(0, 0, 0, 16, 10, 16);
-			case EAST -> box(0, 0, 0, 16, 10, 16);
-			case WEST -> box(0, 0, 0, 16, 10, 16);
-			case UP -> box(0, 0, 0, 16, 16, 10);
-			case DOWN -> box(0, 0, 6, 16, 16, 16);
+			default -> Shapes.or(box(0, 0, 0, 16, 7.4, 12.9), box(0, 0, 0, 16, 16, 4.25));
+			case NORTH -> Shapes.or(box(0, 0, 3.1, 16, 7.4, 16), box(0, 0, 11.75, 16, 16, 16));
+			case EAST -> Shapes.or(box(0, 0, 0, 12.9, 7.4, 16), box(0, 0, 0, 4.25, 16, 16));
+			case WEST -> Shapes.or(box(3.1, 0, 0, 16, 7.4, 16), box(11.75, 0, 0, 16, 16, 16));
 		}).move(offset.x, offset.y, offset.z);
 	}
 
@@ -80,7 +79,7 @@ public class OakBenchBlock extends Block implements SimpleWaterloggedBlock {
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		boolean flag = context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER;
-		return this.defaultBlockState().setValue(FACING, context.getNearestLookingDirection().getOpposite()).setValue(WATERLOGGED, flag);
+		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite()).setValue(WATERLOGGED, flag);
 	}
 
 	public BlockState rotate(BlockState state, Rotation rot) {
