@@ -39,7 +39,7 @@
   "workspaceSettings": {
     "modid": "horizoncraft_mod",
     "modName": "HorizonCraft mod",
-    "version": "1.0.0",
+    "version": "0.1.1",
     "author": "Subzero Hiro, MCreator",
     "websiteURL": "https://mcreator.net",
     "license": "Academic Free License v3.0",
@@ -50,6 +50,7 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "fabric-1.19.2",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.horizoncraft.horizoncraftmod",
     "lockBaseModFiles": false
   },
