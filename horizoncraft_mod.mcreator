@@ -1,9 +1,31 @@
 {
-  "mod_elements": [],
+  "mod_elements": [
+    {
+      "name": "OakBench",
+      "type": "block",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "oak_bench",
+      "path": "~/Benches"
+    },
+    {
+      "name": "Benches",
+      "type": "tab",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "benches",
+      "path": "~/Benches"
+    }
+  ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "itemGroup.horizoncraft_mod.benches": "Benches",
+      "block.horizoncraft_mod.oak_bench": "Oak Bench"
+    }
   },
   "foldersRoot": {
     "name": "~",

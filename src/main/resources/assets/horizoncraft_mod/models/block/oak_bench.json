@@ -1,0 +1,8 @@
+{
+  "parent": "horizoncraft_mod:custom/bench",
+  "textures": {
+    "all": "horizoncraft_mod:blocks/bench_textures",
+    "particle": "horizoncraft_mod:blocks/bench_textures",
+    "0": "horizoncraft_mod:blocks/bench_textures"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "horizoncraft_mod:block/oak_bench"
+    },
+    "facing=east": {
+      "model": "horizoncraft_mod:block/oak_bench",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "horizoncraft_mod:block/oak_bench",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "horizoncraft_mod:block/oak_bench",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "horizoncraft_mod:block/oak_bench",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "horizoncraft_mod:block/oak_bench",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "_fv": 33,
+  "_type": "tab",
+  "definition": {
+    "name": "Benches",
+    "icon": {
+      "value": "CUSTOM:OakBench"
+    },
+    "showSearch": false
+  }
+}
